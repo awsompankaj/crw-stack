@@ -9,7 +9,7 @@ components:
         port: 3001
     memoryLimit: 512Mi
     type: dockerimage
-    image: 'docker.io/awsompankaj/skytap:v4'
+    image: 'docker.io/awsompankaj/skytap:v5'
     alias: nodejs
   - endpoints:
       - name: postwoman

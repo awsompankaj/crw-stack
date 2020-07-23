@@ -17,5 +17,5 @@ components:
     memoryLimit: 1024Mi
     type: dockerimage
     image: docker.io/liyasthomas/postwoman
-    alias: postwomen
+    alias: postwomen 
 apiVersion: 1.0.0

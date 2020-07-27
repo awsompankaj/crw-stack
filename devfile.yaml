@@ -1,21 +1,23 @@
 metadata:
-  name: skytap
+  name: Demostack
 components:
   - id: che-incubator/typescript/latest
     memoryLimit: 512Mi
     type: chePlugin
-  - endpoints:
+  - mountSources: true
+    endpoints:
       - name: nodejs
         port: 3001
     memoryLimit: 512Mi
     type: dockerimage
     image: 'docker.io/awsompankaj/skytap:v5'
     alias: nodejs
-  - endpoints:
+  - mountSources: true
+    endpoints:
       - name: postwoman
         port: 3000
     memoryLimit: 1024Mi
     type: dockerimage
     image: docker.io/liyasthomas/postwoman
-    alias: postwomen 
+    alias: postwomen
 apiVersion: 1.0.0

@@ -24,6 +24,8 @@ components:
     endpoints:
       - name: omnidb
         port: 8081
+      - name: socket
+        port: 25482
     memoryLimit: 1024Mi
     type: dockerimage
     image: docker.io/taivokasper/omnidb

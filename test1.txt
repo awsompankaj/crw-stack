@@ -1,1 +1,44 @@
-save me 
+metadata:
+  name: Demostack
+components:
+  - id: che-incubator/typescript/latest
+    memoryLimit: 512Mi
+    type: chePlugin
+  - mountSources: true
+    endpoints:
+      - name: nodejs
+        port: 3001
+    memoryLimit: 512Mi
+    type: dockerimage
+    image: 'docker.io/awsompankaj/skytap:v5'
+    alias: nodejs
+  - mountSources: true
+    endpoints:
+      - name: postwoman
+        port: 3000
+    memoryLimit: 1024Mi
+    type: dockerimage
+    image: docker.io/liyasthomas/postwoman
+    alias: postwomen
+  - mountSources: true
+    endpoints:
+      - name: omnidb
+        port: 8081
+    memoryLimit: 1024Mi
+    type: dockerimage
+    image: docker.io/taivokasper/omnidb
+    alias: omnidb
+  - mountSources: true
+    endpoints:
+      - name: mongo
+        port: 27017
+    env:
+      - name: MONGO_INITDB_ROOT_USERNAME
+        value: root
+      - name: MONGO_INITDB_ROOT_PASSWORD
+        value: admin123
+    memoryLimit: 1024Mi
+    type: dockerimage
+    image: docker.io/mongo
+    alias: mongo
+apiVersion: 1.0.0

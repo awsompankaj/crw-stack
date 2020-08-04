@@ -23,12 +23,12 @@ components:
   - mountSources: true
     endpoints:
       - name: omnidb
-        port: 8081
+        port: 8080
       - name: socket
         port: 25482
     memoryLimit: 1024Mi
     type: dockerimage
-    image: docker.io/taivokasper/omnidb
+    image: docker.io/awsompankaj/omnidb:v1
     alias: omnidb
   - mountSources: true
     endpoints:
@@ -43,4 +43,20 @@ components:
     type: dockerimage
     image: docker.io/mongo
     alias: mongo
+  - mountSources: true
+    endpoints:
+      - name: admin-mongo
+        port: 1234
+    memoryLimit: 1024Mi
+    type: dockerimage
+    image: docker.io/awsompankaj/admin-mongo:v4
+    alias: admin-mongo
+  - mountSources: true
+    endpoints:
+      - name: nginx
+        port: 80
+    memoryLimit: 1024Mi
+    type: dockerimage
+    image: docker.io/awsompankaj/nginx-skytap
+    alias: nginx-skytap
 apiVersion: 1.0.0

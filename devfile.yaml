@@ -18,6 +18,6 @@ components:
         port: 3000
     memoryLimit: 1024Mi
     type: dockerimage
-    image: docker.io/liyasthomas/postwoman
+    image: 'docker.io/liyasthomas/postwoman:1.9.9'
     alias: postwomen
 apiVersion: 1.0.0
